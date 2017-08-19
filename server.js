@@ -22,7 +22,7 @@ var articleOne = {
     heading: "My First Article",
     Content: `<p>
                     This is my first Article and I love to build webapps.
-                </p>`
+            </p>`
 };
 
 function createTemplete(data){
