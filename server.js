@@ -64,7 +64,7 @@ var htmlTemplete = `
 `;
 return htmlTemplete;
 }
-app.get('/:', function(req,res) {
+app.get('/Article-one:', function(req,res) {
     res.send(createTemplete(articleOne));
 });
 
