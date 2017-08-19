@@ -5,8 +5,8 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-app.get('/:articleName', function(req,res) {
-    res.send(createTemplete(articles(articleName)));
+app.get('/:', function(req,res) {
+    res.send(createTemplete(articleOne));
 });
 
 app.get('/Article-two', function(req,res) {
@@ -17,29 +17,27 @@ app.get('/Article-three', function(req,res) {
     res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
 });
 
-var articles = {
-    var articleOne: {
+    var articleOne = {
         title: "Article One | Gopal",
         heading: "My First Article",
         Content: `<p>
                         This is my first Article and I love to build webapps.
                 </p>`
-    },
-    var articletwo: {
+    }
+    var articletwo = {
         title: "Article two | Gopal",
         heading: "My Second Article",
         Content: `<p>
                         This is my Second Article and I love to build webapps.
                 </p>`
-    },
-    var articlethree: {
+    }
+    var articlethree = {
         title: "Article Three | Gopal",
         heading: "My Third Article",
         Content: `<p>
                         This is my Third Article and I love to build webapps.
                 </p>`
     }
-};
 
 
 function createTemplete(data){
