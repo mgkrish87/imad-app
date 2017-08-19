@@ -68,12 +68,12 @@ app.get('/article-one', function(req,res) {
     res.send(createTemplete(articleOne));
 });
 
-app.get('/Article-two', function(req,res) {
-    res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
+app.get('/article-one', function(req,res) {
+    res.send(createTemplete(articletwo));
 });
 
-app.get('/Article-three', function(req,res) {
-    res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
+app.get('/article-three', function(req,res) {
+    res.send(createTemplete(articlethree));
 });
 
 app.get('/', function (req, res) {
