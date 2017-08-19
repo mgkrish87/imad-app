@@ -5,30 +5,29 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-
-
-    var articleOne = {
+var articles = {
+    articleOne: {
         title: "Article One | Gopal",
         heading: "My First Article",
         Content: `<p>
                         This is my first Article and I love to build webapps.
                 </p>`
-    }
-    var articletwo = {
+    },
+    articletwo: {
         title: "Article two | Gopal",
         heading: "My Second Article",
         Content: `<p>
                         This is my Second Article and I love to build webapps.
                 </p>`
-    }
-    var articlethree = {
+    },
+    articlethree: {
         title: "Article Three | Gopal",
         heading: "My Third Article",
         Content: `<p>
                         This is my Third Article and I love to build webapps.
                 </p>`
     }
-
+};
 
 function createTemplete(data){
   var title = data.title;
@@ -64,16 +63,8 @@ var htmlTemplete = `
 `;
 return htmlTemplete;
 }
-app.get('/article-one', function(req,res) {
-    res.send(createTemplete(articleOne));
-});
-
-app.get('/article-two', function(req,res) {
-    res.send(createTemplete(articletwo));
-});
-
-app.get('/article-three', function(req,res) {
-    res.send(createTemplete(articlethree));
+app.get('/:articleName', function(req,res) {
+    res.send(createTemplete(articleName));
 });
 
 app.get('/', function (req, res) {
