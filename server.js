@@ -6,7 +6,7 @@ var app = express();
 app.use(morgan('combined'));
 
 app.get('/Article-one', function(req,res) {
-    res.send(createTemplate(articleOne));
+    res.send(createTemplete(articleOne));
 });
 
 app.get('/Article-two', function(req,res) {
