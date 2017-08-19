@@ -64,7 +64,7 @@ var htmlTemplete = `
 return htmlTemplete;
 }
 app.get('/:articleName', function(req,res) {
-    res.send(createTemplete(articleName));
+    res.send(createTemplete(articles(articleName)));
 });
 
 app.get('/', function (req, res) {
