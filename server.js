@@ -5,17 +5,7 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-app.get('/:', function(req,res) {
-    res.send(createTemplete(articleOne));
-});
 
-app.get('/Article-two', function(req,res) {
-    res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
-});
-
-app.get('/Article-three', function(req,res) {
-    res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
-});
 
     var articleOne = {
         title: "Article One | Gopal",
@@ -74,6 +64,17 @@ var htmlTemplete = `
 `;
 return htmlTemplete;
 }
+app.get('/:', function(req,res) {
+    res.send(createTemplete(articleOne));
+});
+
+app.get('/Article-two', function(req,res) {
+    res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
+});
+
+app.get('/Article-three', function(req,res) {
+    res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
+});
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
