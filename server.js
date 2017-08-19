@@ -17,13 +17,18 @@ app.get('/Article-three', function(req,res) {
     res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
 });
 
-var articleOne = {
-    title: "Article One | Gopal",
-    heading: "My First Article",
-    Content: `<p>
-                    This is my first Article and I love to build webapps.
-            </p>`
+var articles = {
+    var articleOne: {
+        title: "Article One | Gopal",
+        heading: "My First Article",
+        Content: `<p>
+                        This is my first Article and I love to build webapps.
+                </p>`
+    },
+    var articletwo: {},
+    var articlethree: {}
 };
+
 
 function createTemplete(data){
   var title = data.title;
