@@ -28,7 +28,7 @@ var articleOne = {
 function createTemplete(data){
   var title = data.title;
   var heading = data.heading;
-  var content = data.Content;
+  var Content = data.Content;
 
 var htmlTemplete = `
 <html>
