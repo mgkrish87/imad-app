@@ -6,7 +6,7 @@ var app = express();
 app.use(morgan('combined'));
 
 app.get('/Article-one', function(req,res) {
-    res.sendFile(path.join(__dirname, 'ui', 'article-one.html'));
+    res.send(createTemplate(articleOne));
 });
 
 app.get('/Article-two', function(req,res) {
@@ -16,6 +16,49 @@ app.get('/Article-two', function(req,res) {
 app.get('/Article-three', function(req,res) {
     res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
 });
+
+var articleOne = {
+    title: "Article One | Gopal",
+    heading: "My First Article",
+    Content: `<p>
+                    This is my first Article and I love to build webapps.
+                </p>`
+};
+
+function createTemplete(data){
+  var title = data.title;
+  var heading = data.heading;
+  var content = data.Content;
+
+var htmlTemplete = `
+<html>
+    <head>
+        
+    <title>
+    ${title}
+    </title>
+    <link href="/ui/style.css" rel="stylesheet" />
+    </head>
+    
+    <body>
+        <div class="container">
+            <div>
+                <a href="/"> Home </a>
+            </div>
+            <h3>${heading}</h3>
+            
+            <div>
+                Aug 19th 2017.
+            </div>
+            <div>
+                ${Content}
+            </div>
+        </div>
+    </body>
+</html>
+`;
+return htmlTemplete;
+}
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
