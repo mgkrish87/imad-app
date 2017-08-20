@@ -83,7 +83,7 @@ app.get('/hash/:input', function(req,res) {
 });
 
 var pool = new pool(config);
-app.get('/create-user', function(req,res){
+app.post('/create-user', function(req,res){
     
     var username = req.body.username;
     var password = req.body.password;
@@ -99,6 +99,31 @@ app.get('/create-user', function(req,res){
         
     });
 });
+
+app.post('/login', function(req,res){
+    
+    var username = req.body.username;
+    var password = req.body.password;
+   
+       pool.query('SELECT * from "user" username = $1', [username], function(req,res){
+        if (err){
+            res.status(500).send(err.toString());
+        } else {
+            if (result.rows.length === 0){
+                res.send(403).send("user name value is invalid");
+            }
+            else {
+                var dbString = res.rows[0].password;
+                dbString.split('$');
+                res.send("user created successfully");
+            }
+            
+        }
+        
+        
+    });
+});
+
 
 var counter = 0;
 app.get('/counter', function(req,res){
