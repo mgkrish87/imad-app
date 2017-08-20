@@ -114,8 +114,15 @@ app.post('/login', function(req,res){
             }
             else {
                 var dbString = res.rows[0].password;
-                dbString.split('$');
+                var salt = dbString.split('$')[2];
+                var hashedPassword = hash(password,salt);
                 res.send("user created successfully");
+                if(hashedPassword === dbString){
+                    res.send('user successfully logged in');
+                }else
+                {
+                    res.send(403).send("username/pwd value is invalid");
+                }
             }
             
         }
