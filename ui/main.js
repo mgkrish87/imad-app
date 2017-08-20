@@ -1,10 +1,8 @@
 console.log('Loaded!');
 
 var button = document.getElementById('counter');
-var counter = 0;
-button.onClick = funciton(){
-    
-    //Make a request to end point
+button.onclick = function () {
+        //Make a request to end point
     
     //Get the variable.
     
@@ -14,4 +12,4 @@ button.onClick = funciton(){
     var span = document.getElementById('count');
     span.innerHTML = counter.toString();
     
-}
+};
