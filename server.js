@@ -119,7 +119,7 @@ app.post('/login', function(req,res){
                 res.send("user created successfully");
                 if(hashedPassword === dbString){
                     res.send('user successfully logged in');
-                }else
+                } else
                 {
                     res.send(403).send("username/pwd value is invalid");
                 }
