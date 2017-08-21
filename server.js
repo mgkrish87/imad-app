@@ -90,7 +90,7 @@ app.get('/hash/:input', function(req,res) {
     res.send(hashstring);
 });
 
-var pool = new pool(config);
+var pool = new Pool(config);
 app.post('/create-user', function(req,res){
     
     var username = req.body.username;
