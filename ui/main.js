@@ -1,8 +1,9 @@
 console.log('Loaded!');
 
 var button = document.getElementById('counter');
+var submit = document.getElementById('submit_btn');
 var counter = 0;
-button.onclick = function () {
+submit.onclick = function () {
         //Make a request to end point
     var request = new XMLHttpRequest();
     //Get the variable.
@@ -15,9 +16,12 @@ button.onclick = function () {
             };
     
     //show it in correct span
-    
-    request.open('GET', 'http://marrigopal87.imad.hasura-app.io/counter', true);
-    request.send(null);
+    var username = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
+    console.log(username);
+    console.log(password);
+    request.open('POST', 'http://marrigopal87.imad.hasura-app.io/login', true);
+    request.send(JSON.stringify({username: username,password:password}));
     
     
 };
