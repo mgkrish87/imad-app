@@ -9,9 +9,7 @@ submit.onclick = function () {
     //Get the variable.
     request.onreadystatechange = function () {
             if(request.readyState === XMLHttpRequest.DONE && request.status === 200) {
-                    var counter = request.responseText;
-                    var span = document.getElementById('count');
-                    span.innerHTML = counter.toString();
+                    
                 }
             };
     
@@ -21,6 +19,7 @@ submit.onclick = function () {
     console.log(username);
     console.log(password);
     request.open('POST', 'http://marrigopal87.imad.hasura-app.io/login', true);
+    request.setRequestHeader('Content-Type', 'application-json');
     request.send(JSON.stringify({username: username,password:password}));
     
     
