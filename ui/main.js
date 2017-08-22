@@ -9,7 +9,7 @@ submit.onclick = function () {
     //Get the variable.
     request.onreadystatechange = function () {
             if(request.readyState === XMLHttpRequest.DONE && request.status === 200) {
-                    
+                    alert('loggened in');
                 }
             };
     
