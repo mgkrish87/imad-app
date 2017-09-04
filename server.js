@@ -116,13 +116,12 @@ app.post('/login', function(req,res){
             res.status(500).send(err.toString());
         } else {
             if (result.rows.length === 0){
-                res.send(403).send("user name value is invalid");
+                res.send(403).send("user name/password value is invalid");
             }
             else {
                 var dbString = result.rows[0].password;
                 var salt = dbString.split('$')[2];
                 var hashedPassword = hash(password, salt);
-                res.send("user created successfully");
                 if(hashedPassword === dbString){
                     res.send('user successfully logged in');
                 } else
