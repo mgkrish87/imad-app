@@ -1,6 +1,6 @@
 console.log('Loaded!');
 
-var button = document.getElementById('counter');
+// var button = document.getElementById('counter');
 var submit = document.getElementById('submit_btn');
 var counter = 0;
 submit.onclick = function () {
@@ -8,8 +8,17 @@ submit.onclick = function () {
     var request = new XMLHttpRequest();
     //Get the variable.
     request.onreadystatechange = function () {
-            if(request.readyState === XMLHttpRequest.DONE && request.status === 200) {
+            if(request.readyState === XMLHttpRequest.DONE) {
+                if(request.status === 200)
+                {
+                    console.log('user logged in');
                     alert('loggened in');
+                } else if(request.status === 403) {
+                    alert('username/pwd is invalid');
+                } else if (request.status === 500) {
+                    alert('somethingwent wrong');
+                    }
+                    
                 }
             };
     
@@ -19,7 +28,7 @@ submit.onclick = function () {
     console.log(username);
     console.log(password);
     request.open('POST', 'http://marrigopal87.imad.hasura-app.io/login', true);
-    request.setRequestHeader('Content-Type', 'application-json');
+    request.setRequestHeader('Content-Type', 'application/json');
     request.send(JSON.stringify({username: username,password:password}));
     
     
