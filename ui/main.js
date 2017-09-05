@@ -12,7 +12,7 @@ submit.onclick = function () {
                 if(request.status === 200)
                 {
                     console.log('user logged in');
-                    alert('loggened in');
+                    alert('logged in');
                 } else if(request.status === 403) {
                     alert('username/pwd is invalid');
                 } else if (request.status === 500) {
