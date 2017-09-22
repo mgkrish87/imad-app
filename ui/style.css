@@ -18,6 +18,9 @@ h4{
     font-weight: bold;
 }
 
+.img-medium {
+    height: 200px;
+}
 .container {
     max-width: 800px;
     color: grey;
