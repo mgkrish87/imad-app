@@ -22,7 +22,16 @@ var articles = {
         title: "Article One | Gopal",
         heading: "My First Article",
         Content: `<p>
-                        This is my first Article and I love to build webapps.
+                        This is my first Article and I love to build webapps.This is my first Article and I love to build webapps.
+                        This is my first Article and I love to build webapps.This is my first Article and I love to build webapps.
+                </p>
+                <p>
+                        This is my first Article and I love to build webapps.This is my first Article and I love to build webapps.
+                        This is my first Article and I love to build webapps.This is my first Article and I love to build webapps.
+                </p>
+                <p>
+                        This is my first Article and I love to build webapps.This is my first Article and I love to build webapps.
+                        This is my first Article and I love to build webapps.This is my first Article and I love to build webapps.
                 </p>`
     },
     'article-two': {
