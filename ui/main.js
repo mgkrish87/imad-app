@@ -1,8 +1,9 @@
 console.log('Loaded!');
 
-// var button = document.getElementById('counter');
+var button = document.getElementById('counter');
+counter.innerHTML = 'Click here';
 var submit = document.getElementById('submit_btn');
-var counter = 0;
+//var counter = 0;
 submit.onclick = function () {
         //Make a request to end point
     var request = new XMLHttpRequest();
