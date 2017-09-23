@@ -53,8 +53,8 @@ button.onclick = function(){
 var submitbutton = document.getElementById('submit_btn1');
 submitbutton.onclick = function(){
   
-  var nameInput = document.getElementById('name');
-  var name = nameInput.value;
+//  var nameInput = document.getElementById('name');
+//  var name = nameInput.value;
   var names = ['name1', 'name2', 'name3'];
   var list = '';
   for(var i=0;i<names.length; i++){
