@@ -50,7 +50,7 @@ button.onclick = function(){
  request.open('GET', 'http://marrigopal87.imad.hasura-app.io/counter', true);
  request.send(null);
 };
-var submitbutton = document.getElementById('submit_btn');
+var submitbutton = document.getElementById('submit_btn1');
 submitbutton.onclick = function(){
   
   var nameInput = document.getElementById('name');
