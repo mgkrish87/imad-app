@@ -1,5 +1,19 @@
 console.log('Loaded!');
 
+var submitbutton = document.getElementById('submit_button');
+submitbutton.onclick = function(){
+  
+//  var nameInput = document.getElementById('name');
+//  var name = nameInput.value;
+  var names = ['name1', 'name2', 'name3'];
+  var list = '';
+  for (var i=0; i< names.length; i++){
+      list == '<li>' + names[i] + '</li>';
+  }
+  var ul = document.getElementById('orderlist');
+  ul.innerHTML = list;
+};
+
 var button = document.getElementById('counter');
 counter.innerHTML = 'Click here';
 var submit = document.getElementById('submit_btn');
@@ -49,17 +63,4 @@ button.onclick = function(){
         };
  request.open('GET', 'http://marrigopal87.imad.hasura-app.io/counter', true);
  request.send(null);
-};
-var submitbutton = document.getElementById('submit_button');
-submitbutton.onclick = function(){
-  
-//  var nameInput = document.getElementById('name');
-//  var name = nameInput.value;
-  var names = ['name1', 'name2', 'name3'];
-  var list = '';
-  for (var i=0; i< names.length; i++){
-      list == '<li>' + names[i] + '</li>';
-  }
-  var ul = document.getElementById('orderlist');
-  ul.innerHTML = list;
 };
