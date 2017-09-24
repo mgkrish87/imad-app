@@ -98,7 +98,7 @@ app.get('/counter' , function(req,res){
 // to get string from request and send string array in response
 var names = [];
 app.get('/submit-name/:name', function(req,res){
-    var name = req.param.name;
+    var name = req.params.name;
     names.push(name);
     res.send(JSON.stringify(names));
 });
