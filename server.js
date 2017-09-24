@@ -89,10 +89,18 @@ return htmlTemplete;
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
+// Increment counter value every time user hits url.
 var counter = 0;
 app.get('/counter' , function(req,res){
     counter = counter+1;
     res.send(counter.toString());
+});
+// to get string from request and send string array in response
+var names = [];
+app.get('/submit-name/:name', function(req,res){
+    var name = req.param.name;
+    names.push(name);
+    res.send(JSON.Stringify(names));
 });
 
 app.get('/:articleName', function (req, res) {
